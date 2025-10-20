@@ -2,19 +2,17 @@
 import { useAuth } from '@clerk/nextjs';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithCustomToken } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 // Add your Firebase config object
 const firebaseConfig = {
-  apiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-  authDomain: 'clerk-example-xxxxx.firebaseapp.com',
-  databaseURL: 'https://clerk-example-xxxxx-default-xxxx.firebaseio.com',
-  projectId: 'clerk-test-xxxx',
-  storageBucket: 'clerk-test-xxxx.appspot.com',
-  messagingSenderId: '012345678910',
-  appId: '1:012345678:web:abcdef123456hijklm',
-  measurementId: 'G-ABC123DEF',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Connect to your Firebase app
