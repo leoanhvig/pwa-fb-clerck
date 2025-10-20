@@ -5,7 +5,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import InitPWA from "../components/InitPWA";
 import SWMessageListener from "../components/SWMessageListener";
 import "./globals.css";
@@ -19,12 +19,13 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Demo My App",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
   themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
 };
 
 export default function RootLayout({
