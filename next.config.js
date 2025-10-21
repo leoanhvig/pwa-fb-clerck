@@ -34,6 +34,10 @@ const nextConfig = {
 
     return config;
   },
+  runtime: "edge",
+  experimental: {
+    turbo: false,
+  },
 };
 
 module.exports = nextConfig;
