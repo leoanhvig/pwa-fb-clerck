@@ -18,6 +18,8 @@ const firebaseConfig = {
   measurementId: "G-V6193PPNED",
 };
 
+firebase.initializeApp(firebaseConfig);
+
 const messaging = firebase.messaging();
 
 // When app is in background or closed

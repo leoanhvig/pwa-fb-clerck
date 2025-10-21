@@ -1,9 +1,5 @@
 import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  ClerkProvider
 } from "@clerk/nextjs";
 import { Metadata, Viewport } from "next";
 import InitPWA from "../components/InitPWA";
@@ -37,14 +33,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
           <main>{children}</main>
           <SWMessageListener />
           <InitPWA />
